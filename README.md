@@ -1,29 +1,39 @@
-# Redux Toolkit TypeScript Example
+# React Multi-Select Autocomplete Component with Rick and Morty API
 
-This example shows how to integrate Next.js with [Redux Toolkit](https://redux-toolkit.js.org).
+Bu proje, Next.js ve TypeScript kullanılarak geliştirilmiş bir multi-select autocomplete bileşenini içermektedir. Bileşen, "Rick and Morty" API'sinden karakterleri aramak ve seçmek için tasarlanmıştır.
 
-The **Redux Toolkit** is a standardized way to write Redux logic (create actions and reducers, setup the store with some default middlewares like redux devtools extension). This example demonstrates each of these features with Next.js
+## Özellikler
 
-## Deploy your own
+- Multi-select autocomplete bileşeni
+- Input alanına yazılan sorgu ile API sorgulaması yapma ve sonuçları bir popup içinde listeleme
+- Listelenen sonuçlarda her bir karakter için karakter resmi, isim ve oynadığı bölüm sayısı bilgisini gösterme
+- Arama sorgusu için vurgulama
+- Seçilen sonuçların input alanına eklenmesi ve kaldırılması
+- Klavye gezinme desteği (yön tuşları ve tab kullanarak)
+- Loading durumu gösterimi
+- Arayüzde exception handling ve hata durumlarının gösterimi
+- Tailwind CSS ve Redux Toolkit Query kullanımı
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+## Kurulum
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-redux&project-name=with-redux&repository-name=with-redux)
+1. Proje klasörünü yerel makinenize klonlayın.
+2. Terminal veya komut istemcisini açın ve proje klasörüne gidin.
+3. Gerekli bağımlılıkları yüklemek için `yarn` komutunu çalıştırın.
+4. Projeyi başlatmak için `yarn dev` komutunu çalıştırın.
 
-## How to use
+## Kullanım
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+1. Tarayıcıda proje açıldığında, multi-select autocomplete bileşeni görüntülenecektir.
+2. Input alanına istediğiniz karakterin adını yazarak arama yapabilirsiniz.
+3. Sonuçlar arasında gezinmek için yön tuşlarını veya fareyi kullanabilirsiniz.
+4. Seçmek istediğiniz karaktere gelip Enter tuşuna basarak seçebilirsiniz.
+5. Seçilen karakterler input alanında listelenecektir. İstediğiniz karakteri kaldırmak için 'x' düğmesine tıklayabilirsiniz.
 
-```bash
-npx create-next-app --example with-redux with-redux-app
-```
+## Mimari
 
-```bash
-yarn create next-app --example with-redux with-redux-app
-```
+- **Components**: React bileşenlerini içerir.
+- **Redux**: Redux store ve slice'ları içerir.
 
-```bash
-pnpm create next-app --example with-redux with-redux-app
-```
+## Lisans
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+Bu proje MIT lisansı altında lisanslanmıştır.

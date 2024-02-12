@@ -1,35 +1,16 @@
-/* Core */
-import {
-  configureStore,
-  type ThunkAction,
-  type Action,
-} from "@reduxjs/toolkit";
-import {
-  useSelector as useReduxSelector,
-  useDispatch as useReduxDispatch,
-  type TypedUseSelectorHook,
-} from "react-redux";
+import { configureStore } from "@reduxjs/toolkit";
+import { api } from "./api";
+import { SearchSlice } from "./slices/searchSlice/searchSlice";
 
-/* Instruments */
-import { reducer } from "./rootReducer";
-import { middleware } from "./middleware";
-
-export const reduxStore = configureStore({
-  reducer,
-  middleware: (getDefaultMiddleware) => {
-    return getDefaultMiddleware().concat(middleware);
+const store = configureStore({
+  reducer: {
+    search: SearchSlice.reducer,
+    [api.reducerPath]: api.reducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(api.middleware),
 });
-export const useDispatch = () => useReduxDispatch<ReduxDispatch>();
-export const useSelector: TypedUseSelectorHook<ReduxState> = useReduxSelector;
 
-/* Types */
-export type ReduxStore = typeof reduxStore;
-export type ReduxState = ReturnType<typeof reduxStore.getState>;
-export type ReduxDispatch = typeof reduxStore.dispatch;
-export type ReduxThunkAction<ReturnType = void> = ThunkAction<
-  ReturnType,
-  ReduxState,
-  unknown,
-  Action
->;
+export { store };
+export type AppDispatch = typeof store.dispatch;
+export type RootState = ReturnType<typeof store.getState>;
